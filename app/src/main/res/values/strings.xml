@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SizeBook</string>
+    <string name="app_name">rperez-SizeBook</string>
     <string name="add_person">Add a Person:</string>
     <string name="new_record">New Record</string>
     <string name="edit_message">Edit Message</string>
@@ -14,6 +14,6 @@
     <string name="waist_indicator">WAIST:</string>
     <string name="hip_indicator">HIP:</string>
     <string name="inseam_indicator">INSEAM:</string>
-    <string name="comment_indicator">COMMENTS:</string>
+    <string name="comment_indicator">COMMENT:</string>
     <string name="date_indicator">Date:</string>
 </resources>
