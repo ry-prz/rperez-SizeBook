@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">SizeBook</string>
+    <string name="add_person">Add a Person:</string>
+    <string name="new_record">New Record</string>
+    <string name="edit_message">Edit Message</string>
+    <string name="total_records_message">Total Number of Records:</string>
+    <string name="record_name">Required Field</string>
+    <string name="date_hint">yyyy-mm-dd</string>
+    <string name="record_button">Save</string>
+    <string name="name_indicator">NAME:</string>
+    <string name="neck_indicator">NECK:</string>
+    <string name="bust_indicator">BUST:</string>
+    <string name="chest_indicator">CHEST:</string>
+    <string name="waist_indicator">WAIST:</string>
+    <string name="hip_indicator">HIP:</string>
+    <string name="inseam_indicator">INSEAM:</string>
+    <string name="comment_indicator">COMMENTS:</string>
+    <string name="date_indicator">Date:</string>
+</resources>
