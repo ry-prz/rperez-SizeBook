@@ -21,6 +21,11 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Locale;
 
+/**
+ * This is the activity that displays all stored records in a listview.
+ * Also implemented is an "add record" floating action button which starts
+ * the ViewRecordActivity viewer/editor, along with tapping an existing record.
+ */
 public class ViewRecordsList extends AppCompatActivity {
 
     private static final String FILENAME = "file.sav";
@@ -42,7 +47,11 @@ public class ViewRecordsList extends AppCompatActivity {
 
         recordsCount.setText(String.valueOf(personList.size()));
 
-
+        /**
+         * Action when a record in the record list is clicked. The position of the
+         * clicked record is passed to  ViewRecordActivity to be viewed with the option
+         * to edit
+         */
         oldPersonsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -52,6 +61,13 @@ public class ViewRecordsList extends AppCompatActivity {
             }
         });
 
+
+        /**
+         * On clicking the floating action button, Create a new record.
+         * Here, -1 is passed as an intent for the record's position
+         * to signal that a new record should be instantiated instead of
+         * editing existing ones
+         */
         addRecord.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
@@ -67,8 +83,10 @@ public class ViewRecordsList extends AppCompatActivity {
 
 
     @Override
+    /**
+     * on start, refresh record list
+     */
     protected void onStart() {
-        // TODO Auto-generated method stub
         super.onStart();
         loadFromFile();
         adapter = new ArrayAdapter<Person>(this,
@@ -76,6 +94,9 @@ public class ViewRecordsList extends AppCompatActivity {
         oldPersonsList.setAdapter(adapter);
     }
 
+    /**
+     * on resume, refresh record list
+     */
     @Override
     protected void onResume() {
         super.onResume();

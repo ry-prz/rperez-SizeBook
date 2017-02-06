@@ -3,6 +3,7 @@ package com.rperez.myapplication;
 import java.util.Date;
 
 /**
+ * This is a Person class.
  * Created by ryanp on 2017-02-05.
  */
 public class Person {

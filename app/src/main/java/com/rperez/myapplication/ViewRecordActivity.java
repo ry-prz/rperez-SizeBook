@@ -26,7 +26,9 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Locale;
 
-
+/**
+ *
+ */
 public class ViewRecordActivity extends AppCompatActivity {
     private ArrayList<Person> personList;
     private static final String FILENAME = "file.sav";
@@ -38,8 +40,9 @@ public class ViewRecordActivity extends AppCompatActivity {
 
         /**
          * Prevent soft keyboard popping up automatically
-         * code from:
+         * code adapted from:
          * http://stackoverflow.com/questions/9732761/how-to-avoid-automatically-appear-android-keyboard-when-activity-start
+         * accessed 02-03-2017
          */
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
@@ -48,6 +51,10 @@ public class ViewRecordActivity extends AppCompatActivity {
         final int recordPosition = getIntent().getExtras().getInt("record_position");
         Button saveButton = (Button) findViewById(R.id.record_add_button);
 
+        /**
+         * This button saves all non-blank text boxes when clicked, also checking
+         * that name is not empty.
+         */
         saveButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
@@ -129,6 +136,12 @@ public class ViewRecordActivity extends AppCompatActivity {
 
 
     @Override
+    /**
+     * On start of this activity, if the record position
+     * indicates the action is to edit an existing record, this
+     * onStart override displays all existing content of the record.
+     * @see ViewRecordsList for details on recordPosition
+     */
     public void onStart() {
         super.onStart();
         loadFromFile();
@@ -234,14 +247,19 @@ public class ViewRecordActivity extends AppCompatActivity {
         }
     }
 
-    //http://stackoverflow.com/questions/11740311/android-confirmation-message-for-delete
+    /**
+     * This is a one instance object of an AlertDialog that asks user for confirmation
+     * to delete the currently selected record
+     * From: http://stackoverflow.com/questions/11740311/android-confirmation-message-for-delete
+     * Accessed 02-03-2017
+     * @return
+     */
     private AlertDialog AskOption()
     {
         AlertDialog myDeletingDialogBox =new AlertDialog.Builder(this)
                 //set message, title, and icon
                 .setTitle("Confirm Deletion")
                 .setMessage("Delete this record?")
-                //.setIcon(R.drawable.delete)
 
                 .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
 
