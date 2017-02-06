@@ -237,7 +237,7 @@ public class ViewRecordActivity extends AppCompatActivity {
     //http://stackoverflow.com/questions/11740311/android-confirmation-message-for-delete
     private AlertDialog AskOption()
     {
-        AlertDialog myQuittingDialogBox =new AlertDialog.Builder(this)
+        AlertDialog myDeletingDialogBox =new AlertDialog.Builder(this)
                 //set message, title, and icon
                 .setTitle("Confirm Deletion")
                 .setMessage("Delete this record?")
@@ -262,7 +262,7 @@ public class ViewRecordActivity extends AppCompatActivity {
                     }
                 })
                 .create();
-        return myQuittingDialogBox;
+        return myDeletingDialogBox;
 
     }
 }

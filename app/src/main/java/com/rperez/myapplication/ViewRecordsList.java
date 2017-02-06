@@ -16,13 +16,12 @@ import com.google.gson.reflect.TypeToken;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
+public class ViewRecordsList extends AppCompatActivity {
 
     private static final String FILENAME = "file.sav";
 
@@ -47,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         oldPersonsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent1 = new Intent(MainActivity.this, ViewRecordActivity.class);
+                Intent intent1 = new Intent(ViewRecordsList.this, ViewRecordActivity.class);
                 intent1.putExtra("record_position", position);
                 startActivity(intent1);
             }
@@ -56,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         addRecord.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
-                Intent intent2 = new Intent(MainActivity.this, ViewRecordActivity.class);
+                Intent intent2 = new Intent(ViewRecordsList.this, ViewRecordActivity.class);
                 intent2.putExtra("record_position", -1);
                 startActivity(intent2);
 
